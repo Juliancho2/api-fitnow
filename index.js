@@ -6,6 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const userRouter = require('./controllers/user');
 const routineRouter = require('./controllers/routine');
+const bodyRouter = require('./controllers/bodyTarget');
 const app = express();
 
 
@@ -18,8 +19,9 @@ app.use(express.json());
 app.use('/api/login', loginRouter);
 app.use('/api/user', userRouter);
 
-
 app.use('/api/routine', routineRouter)
+
+app.use('/api/body',bodyRouter )
 
 
 app.use((request, response) => {
